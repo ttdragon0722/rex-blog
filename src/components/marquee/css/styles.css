@@ -1,0 +1,11 @@
+.marquee-next {
+    z-index: 500;
+}
+
+.marquee-playing {
+    z-index: 400;
+}
+
+.marquee-prev {
+    z-index: 300;
+}

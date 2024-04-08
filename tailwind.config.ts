@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        TaipeiBold: ['TaipeiSansBold', 'sans-serif'],
+        Taipei: ['TaipeiSansRegular', 'sans-serif'],
+        TaipeiLight: ['TaipeiSansLight', 'sans-serif'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

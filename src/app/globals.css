@@ -3,31 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--light-small-header-bg: #ecf0fa;
+	--light-small-header-text: #142474;
+	--dark-small-header-bg: #ecf0fa;
+	--dark-small-header-text: #142474;
 }
 
+@font-face {
+    font-family: "TaipeiSansBold" ;
+    src: url("/fonts/TaipeiSansTC/TaipeiSansTCBeta-Bold.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: "TaipeiSansRegular" ;
+    src: url("/fonts/TaipeiSansTC/TaipeiSansTCBeta-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: "TaipeiSansLight" ;
+    src: url("/fonts/TaipeiSansTC/TaipeiSansTCBeta-Light.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.small-header {
+	color: var(--light-small-header-text);
+	background-color: var(--light-small-header-bg);
+}
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.small-header {
+		color: var(--dark-small-header-text);
+		background-color: var(--dark-small-header-bg);
+	}
 }
