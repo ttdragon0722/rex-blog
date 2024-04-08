@@ -1,6 +1,6 @@
 import React from "react";
 import type { ImageProp } from "../marquee-interface";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const MarqueeImage: React.FC<ImageProp> = ({ id, className, marqueeTurn, src, alt }) => {
     return <div className={`${marqueeTurn} marquee-card absolute w-full h-full`} >

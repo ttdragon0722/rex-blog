@@ -26,6 +26,7 @@ interface MarqueeProp {
 	offset?: string;
 	className?: string;
 	style?: React.CSSProperties | undefined;
+	rounded?: string;
 }
 
 type marqueeTurn = "marquee-playing" | "marquee-next" | "marquee-prev" | "";

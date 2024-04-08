@@ -1,13 +1,13 @@
 import Container from "@/components/container/container";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import Image from "next/image";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/legacy/image";
 import React, { useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const SkillPage = () => {
     useLayoutEffect(() => {
-        gsap.fromTo("#skillScreen",{display:"none",opacity:0}, {
+        gsap.fromTo("#skillScreen", { display: "none", opacity: 0 }, {
             display: "block", opacity: 1,
             scrollTrigger: {
                 trigger: "#skillPage",
@@ -17,7 +17,7 @@ const SkillPage = () => {
             }
         });
         gsap.fromTo("#skillScreen", { opacity: 1 }, {
-            opacity: 0,display: "none",
+            opacity: 0, display: "none",
             scrollTrigger: {
                 trigger: "#skillPage",
                 scrub: true,
