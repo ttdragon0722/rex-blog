@@ -1,6 +1,6 @@
 import Marquee from "@/components/marquee/marquee";
 import TopHeader from "./components/topHeader";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import AsciiTitle from "./components/asciiTitle";
 import Container from "@/components/container/container";
 import Dots from "@/components/dots/dots";
@@ -23,7 +23,7 @@ const Home = () => {
         dotAnimation();
     },[]);
 
-    return <section className="relative h-screen flex flex-col max-lg:h-fit">
+    return <section className="relative h-screen flex flex-col max-lg:h-fit max-lg:min-h-screen">
         <Dots
             color="black"
             dotClass="homeDot"
@@ -62,7 +62,7 @@ const Home = () => {
                 rounded="rounded-3xl"
                 className="
                     relative shadow-2xl w-[650px] h-[600px] overflow-hidden 
-                    max-md:w-full max-md:h-[550px]
+                    max-md:w-full max-md:h-full max-md:aspect-square
                 "
                 offset="-15%"
                 speed={5}

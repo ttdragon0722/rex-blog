@@ -1,15 +1,16 @@
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Dot from "./util/dot";
 import { v4 } from "uuid";
 
 import type { DotsProp } from "./dots-interface";
+import gsap from "gsap/dist/gsap";
 
 const Dots: React.FC<DotsProp> = ({
-        gap, gapX, gapY, 
-        className, style, color, dotClass,
-        offsetX = "0px", offsetY = "0px", accX = "0px", accY = "0px"
-    }) => {
+    gap, gapX, gapY,
+    className, style, color, dotClass,
+    offsetX = "0px", offsetY = "0px", accX = "0px", accY = "0px"
+}) => {
     const dotsRef = useRef<HTMLDivElement>(null);
     const [width, setWidth] = useState<number>();
     const [height, setHeight] = useState<number>();
