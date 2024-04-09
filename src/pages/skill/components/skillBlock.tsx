@@ -4,12 +4,12 @@ import React from "react";
 import type { SkillBlockProp } from "../skill-interface"
 
 const SkillBlock: React.FC<SkillBlockProp> = ({ imgSrc, title, description, debug = false }) => {
-    return <div className="skillBlock flex sm:w-fit w-full shadow-lg bg-white/60 p-2 rounded-lg" style={{ opacity: debug ? 1 : 0 }}>
-        <div className="aspect-square w-28 relative rounded-lg overflow-hidden">
+    return <div className="skillBlock relative flex max-sm:w-full max-xxs:flex-col max-xxs:py-3 items-center w-fit shadow-lg bg-white/60 p-2 rounded-lg" style={{ opacity: debug ? 1 : 0 }}>
+        <div className="aspect-square w-28 max-sm:w-20 relative rounded-lg overflow-hidden">
             <Image src={imgSrc} layout="fill" objectFit="cover" objectPosition="center" alt={title} />
         </div>
-        <div className="flex-1 flex flex-col px-6 py-4">
-            <h1 className="font-TaipeiBold text-xl">{title}</h1>
+        <div className="flex-1 flex flex-col px-6 py-4 max-sm:text-center">
+            <h1 className="font-TaipeiBold text-xl max-sm:text-lg">{title}</h1>
             <p>{description}</p>
         </div>
     </div>

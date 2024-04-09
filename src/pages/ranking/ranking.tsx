@@ -1,9 +1,18 @@
 import Container from "@/components/container/container";
-import React from "react";
+import React, { useEffect } from "react";
 import RankingBlock from "./components/rankingBlock";
+import gsap from "gsap/dist/gsap";
 
 const RankingPage = () => {
-    return <section className="h-screen relative px-10 py-5">
+    // useEffect(()=>{
+    //     gsap.to(".ranking",{opacity:1,scrollTrigger:{
+    //         trigger:".ranking",
+    //         markers: true,
+    //         start: "top top"
+    //     }})
+    // },[]);
+
+    return <section className="ranking h-screen relative px-10 py-5">
         <Container>
             <h1 className="font-extrabold my-5 px-12 text-5xl">一些超棒的東西</h1>
             <div className="flex h-[80vh] gap-5">

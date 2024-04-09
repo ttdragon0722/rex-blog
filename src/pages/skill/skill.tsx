@@ -76,7 +76,7 @@ const SkillPage = () => {
                 <Container className="flex flex-col gap-2 items-center h-full max-xl:h-fit my-5 max-md:items-start">
                     <div id="skillTitle" className="opacity-0 w-full h-1/2 max-sm:h-[150px] flex items-center justify-center font-TaipeiBold py-10 text-5xl relative text-white drop-shadow-2xl text-center underline underline-offset-[10px]">
                         技能樹 / 經驗
-                    </div>
+                    </div>  
                     <div className="w-full flex flex-wrap gap-2 justify-center">
                         {
                             skillData.map((skillBlock) => {
