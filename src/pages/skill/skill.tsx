@@ -2,12 +2,13 @@ import Container from "@/components/container/container";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/legacy/image";
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import SkillBlock from "./components/skillBlock";
 import { SkillData } from "./skill-interface";
 import { v4 } from "uuid";
 import Link from "next/link";
 import ArrowLink from "./components/arrowLink";
+import useHeight from "@/hook/useHeight";
 gsap.registerPlugin(ScrollTrigger);
 
 const skillData: SkillData[] = [
@@ -18,6 +19,8 @@ const skillData: SkillData[] = [
 ];
 
 const SkillPage = () => {
+    const skillsRef = useRef<HTMLDivElement>(null);
+    const height = useHeight({ ref: skillsRef });
 
     useLayoutEffect(() => {
         gsap.fromTo("#skillScreen", { display: "none", opacity: 0 }, {
@@ -28,15 +31,16 @@ const SkillPage = () => {
                 end: "top"
             }
         });
-        const skillBlockCom = document.querySelectorAll(".skillBlock");
-        gsap.fromTo(skillBlockCom, { opacity: 0 }, {
-            opacity: 1, stagger: 0.2, duration: 0.8,
-            scrollTrigger: {
-                trigger: "#skillPage",
-                start: "5% 5%",
-                end: "15% 5%",
-            }
-        })
+        // const skillBlockCom = document.querySelectorAll(".skillBlock");
+        // gsap.fromTo(skillBlockCom, { opacity: 0 }, {
+        //     opacity: 1, stagger: 0.2, duration: 0.8,
+        //     scrollTrigger: {
+        //         trigger: "#skillPage",
+        //         start: "5% 5%",
+        //         end: "15% 5%",
+        //         refreshPriority: -1
+        //     }
+        // })
         gsap.fromTo("#skillTitle", { opacity: 0 }, {
             opacity: 1, duration: 0.8,
             scrollTrigger: {
@@ -55,22 +59,22 @@ const SkillPage = () => {
         leave.set("#skillScreen", {
             position: "absolute"
         }).set("#skillPage", {
-            height: "100vh",
+            height: height,
         });
-
-    }, []);
+        ScrollTrigger.refresh();
+    }, [height]);
 
     return <>
-        <section id="skillPage" className="w-full h-screen relative">
-            <div className="w-full h-screen top-0">
-                <Image className="sticky top-0" src="/skillPage/skillBackground.jpg" layout="fill" objectFit="cover" alt="skillPageBackground" />
+        <section id="skillPage" className="w-full min-h-screen relative" style={{ height: height }}>
+            <div className="w-full min-h-screen top-0" style={{ height: height }} >
+                <Image style={{ height: height }} className="sticky top-0" src="/skillPage/skillBackground.jpg" layout="fill" objectFit="cover" alt="skillPageBackground" />
             </div>
-            <section id="skillScreen" className="hidden opacity-0 fixed w-full h-screen bg-white/30 top-0 z-[1000]">
-                <Container className="flex flex-col gap-2 items-center h-full max-xl:h-fit my-5 max-md:items-start">
+            <section id="skillScreen" className="hidden opacity-0 fixed w-full min-h-screen bg-white/30 top-0 z-[1000]" style={{ height: height }}>
+                <Container ref={skillsRef} className="flex flex-col gap-2 items-center h-full max-xl:h-fit my-5 max-md:items-start">
                     <div id="skillTitle" className="text-white opacity-0 w-full h-1/2 max-sm:h-[150px] flex flex-col items-center justify-center py-10  relative drop-shadow-2xl text-center">
                         <div className="mb-8 font-TaipeiBold text-5xl underline underline-offset-[10px]">技能樹 / 經驗</div>
                         <ArrowLink />
-                    </div>  
+                    </div>
                     <div className="w-full flex flex-wrap gap-2 justify-center">
                         {
                             skillData.map((skillBlock) => {

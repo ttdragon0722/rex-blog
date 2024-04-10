@@ -11,7 +11,7 @@ const Repository: React.FC<RepositoryProp> = ({ repo }) => {
     return <>
         {
             repo &&
-            <div className="w-full px-2 py-5 flex">
+            <div className="w-full px-2 py-5 flex max-sm:flex-col max-sm:gap-2">
                 <div className="flex-1">
                     <div className="text-sm flex gap-1 items-center">
                         {LanguagePack[repo.language]}
@@ -26,7 +26,7 @@ const Repository: React.FC<RepositoryProp> = ({ repo }) => {
                     <div>{repo.description}</div>
                     <div>{repo.created_at}</div>
                 </div>
-                <div className="flex flex-col gap-3 justify-center items-center h-full text-base max-md:text-sm">
+                <div className="flex flex-col gap-3 justify-center items-center h-full text-base max-md:text-sm max-sm:flex-row max-sm:py-5">
                     <Link href={repo.html_url} target="_blank" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">倉庫連結</Link>
                     {
                         repo.homepage &&

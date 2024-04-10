@@ -9,7 +9,7 @@ const Project = () => {
     const [height, setHeight] = useState<number>(0);
     useEffect(()=>{
         ScrollTrigger.refresh();
-    },[height])
+    },[height]);
 
     useEffect(() => {
         const gsapMedia = gsap.matchMedia();

@@ -4,7 +4,7 @@ import React from "react";
 import type { SkillBlockProp } from "../skill-interface"
 
 const SkillBlock: React.FC<SkillBlockProp> = ({ imgSrc, title, description, debug = false }) => {
-    return <div className="skillBlock relative flex max-sm:w-full max-xxs:flex-col max-xxs:py-3 items-center w-fit shadow-lg bg-white/60 p-2 rounded-lg" style={{ opacity: debug ? 1 : 0 }}>
+    return <div className="skillBlock relative flex max-sm:w-full max-xxs:flex-col max-xxs:py-3 items-center w-fit shadow-lg bg-white/60 p-2 rounded-lg">
         <div className="aspect-square w-28 max-sm:w-20 relative rounded-lg overflow-hidden">
             <Image src={imgSrc} layout="fill" objectFit="cover" objectPosition="center" alt={title} />
         </div>

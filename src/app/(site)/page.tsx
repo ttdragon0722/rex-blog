@@ -10,9 +10,9 @@ export default function Site() {
   return (
     <>
       <Home />
-      <SkillPage />
+      {/* <SkillPage /> */}
       <Project />
-      <RankingPage />
+      {/* <RankingPage /> */}
     </>
   );
 }
