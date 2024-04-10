@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
  * @returns 視窗大小
  */ 
 const useRWD = () => {
-    const [view,setView] = useState<number>();
+    const [view,setView] = useState<number>(0);
     useEffect(() => {
         const handleResize = () => {
             setView(window.innerWidth);

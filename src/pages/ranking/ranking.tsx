@@ -1,16 +1,8 @@
 import Container from "@/components/container/container";
-import React, { useEffect } from "react";
+import React from "react";
 import RankingBlock from "./components/rankingBlock";
-import gsap from "gsap/dist/gsap";
 
 const RankingPage = () => {
-    // useEffect(()=>{
-    //     gsap.to(".ranking",{opacity:1,scrollTrigger:{
-    //         trigger:".ranking",
-    //         markers: true,
-    //         start: "top top"
-    //     }})
-    // },[]);
 
     return <section className="ranking h-screen relative px-10 py-5">
         <Container>

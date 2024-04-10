@@ -9,6 +9,10 @@
 	--dark-small-header-text: #142474;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: "TaipeiSansBold" ;
     src: url("/fonts/TaipeiSansTC/TaipeiSansTCBeta-Bold.ttf") format("truetype");

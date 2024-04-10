@@ -15,11 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <LanguageProvider>
-        <body className="font-Taipei">
+      <body className="font-Taipei">
+        <LanguageProvider>
           {children}
-        </body>
-      </LanguageProvider>
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

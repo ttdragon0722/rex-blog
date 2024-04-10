@@ -6,6 +6,8 @@ import React, { useLayoutEffect } from "react";
 import SkillBlock from "./components/skillBlock";
 import { SkillData } from "./skill-interface";
 import { v4 } from "uuid";
+import Link from "next/link";
+import ArrowLink from "./components/arrowLink";
 gsap.registerPlugin(ScrollTrigger);
 
 const skillData: SkillData[] = [
@@ -26,15 +28,6 @@ const SkillPage = () => {
                 end: "top"
             }
         });
-        // gsap.fromTo("#skillScreen", { opacity: 1 }, {
-        //     opacity: 0, display: "none",
-        //     scrollTrigger: {
-        //         trigger: "#skillPage",
-        //         start: "95% 80%",
-        //         scrub: true,
-        //         end: "105% 80%",
-        //     }
-        // });
         const skillBlockCom = document.querySelectorAll(".skillBlock");
         gsap.fromTo(skillBlockCom, { opacity: 0 }, {
             opacity: 1, stagger: 0.2, duration: 0.8,
@@ -74,8 +67,9 @@ const SkillPage = () => {
             </div>
             <section id="skillScreen" className="hidden opacity-0 fixed w-full h-screen bg-white/30 top-0 z-[1000]">
                 <Container className="flex flex-col gap-2 items-center h-full max-xl:h-fit my-5 max-md:items-start">
-                    <div id="skillTitle" className="opacity-0 w-full h-1/2 max-sm:h-[150px] flex items-center justify-center font-TaipeiBold py-10 text-5xl relative text-white drop-shadow-2xl text-center underline underline-offset-[10px]">
-                        技能樹 / 經驗
+                    <div id="skillTitle" className="text-white opacity-0 w-full h-1/2 max-sm:h-[150px] flex flex-col items-center justify-center py-10  relative drop-shadow-2xl text-center">
+                        <div className="mb-8 font-TaipeiBold text-5xl underline underline-offset-[10px]">技能樹 / 經驗</div>
+                        <ArrowLink />
                     </div>  
                     <div className="w-full flex flex-wrap gap-2 justify-center">
                         {
